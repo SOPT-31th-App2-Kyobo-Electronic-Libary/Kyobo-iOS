@@ -1,5 +1,13 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,swiftpackagemanager,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,cocoapods,xcode
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
 
 ### Swift ###
 # Xcode
@@ -85,12 +93,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-### SwiftPackageManager ###
-Packages
-xcuserdata
-*.xcodeproj
-
-
 ### Xcode ###
 
 ## Xcode 8 and earlier
@@ -99,10 +101,40 @@ xcuserdata
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
-!*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,xcode
+### GENERAL ###
+.DS_Store
+# End of https:# Created by https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,cocoapods,xcode
 
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
+
+### Swift ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
+
+@@@
+-- INSERT --                                                  1,3           Top
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+### GENERAL ###
+.DS_Store
+# End of https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
+~~
+-- INSERT --                                                  110,16        Bot//www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
