@@ -10,12 +10,30 @@
       }
     },
     {
+      "identity" : "commander",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kylef/Commander.git",
+      "state" : {
+        "revision" : "4a1f2fb82fb6cef613c4a25d2e38f702e4d812c2",
+        "version" : "0.9.2"
+      }
+    },
+    {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Moya/Moya",
       "state" : {
         "revision" : "c263811c1f3dbf002be9bd83107f7cdc38992b26",
         "version" : "15.0.3"
+      }
+    },
+    {
+      "identity" : "r.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mac-cain13/R.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "2c16de63bb131f41d0a5f619ad441d3c2436c879"
       }
     },
     {
@@ -46,12 +64,30 @@
       }
     },
     {
+      "identity" : "spectre",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kylef/Spectre.git",
+      "state" : {
+        "revision" : "26cc5e9ae0947092c7139ef7ba612e34646086c7",
+        "version" : "0.10.1"
+      }
+    },
+    {
       "identity" : "then",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/devxoul/Then",
       "state" : {
         "branch" : "master",
         "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a"
+      }
+    },
+    {
+      "identity" : "xcodeedit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tomlokhorst/XcodeEdit",
+      "state" : {
+        "revision" : "cd466d6e8c5ffd2f2b61165d37b0646f09068e1e",
+        "version" : "2.9.0"
       }
     }
   ],
