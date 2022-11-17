@@ -15,13 +15,13 @@
 		E7C2A6F02922084D008579F8 /* LibrarySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6EF2922084D008579F8 /* LibrarySearchVC.swift */; };
 		E7C2A6F229220863008579F8 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6F129220863008579F8 /* MyPageVC.swift */; };
 		E7C2A6F629220A0D008579F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A6F529220A0D008579F8 /* SnapKit */; };
-		E7C2A6F929220A1B008579F8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A6F829220A1B008579F8 /* Then */; };
 		E7C2A6FC29220A8F008579F8 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A6FB29220A8F008579F8 /* CombineMoya */; };
 		E7C2A6FE29220A8F008579F8 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A6FD29220A8F008579F8 /* Moya */; };
 		E7C2A70029220A8F008579F8 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A6FF29220A8F008579F8 /* ReactiveMoya */; };
 		E7C2A70229220A8F008579F8 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A70129220A8F008579F8 /* RxMoya */; };
 		E7C2A704292237D9008579F8 /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A703292237D9008579F8 /* BaseNC.swift */; };
 		E7C2A7072925393F008579F8 /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A7062925393F008579F8 /* rswift */; };
+		E7C2A73629260B68008579F8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A73529260B68008579F8 /* Then */; };
 		E7CE255D291EA7B8006DA24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE255C291EA7B8006DA24C /* AppDelegate.swift */; };
 		E7CE255F291EA7B8006DA24C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE255E291EA7B8006DA24C /* SceneDelegate.swift */; };
 		E7CE2571291F210D006DA24C /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE2570291F210D006DA24C /* AppTabBarController.swift */; };
@@ -62,8 +62,8 @@
 			files = (
 				E7C2A70229220A8F008579F8 /* RxMoya in Frameworks */,
 				E7C2A6F629220A0D008579F8 /* SnapKit in Frameworks */,
-				E7C2A6F929220A1B008579F8 /* Then in Frameworks */,
 				E7C2A6FE29220A8F008579F8 /* Moya in Frameworks */,
+				E7C2A73629260B68008579F8 /* Then in Frameworks */,
 				E7C2A7072925393F008579F8 /* rswift in Frameworks */,
 				E7C2A70029220A8F008579F8 /* ReactiveMoya in Frameworks */,
 				E7C2A6FC29220A8F008579F8 /* CombineMoya in Frameworks */,
@@ -228,12 +228,12 @@
 			name = 31st_Joint_Seminar;
 			packageProductDependencies = (
 				E7C2A6F529220A0D008579F8 /* SnapKit */,
-				E7C2A6F829220A1B008579F8 /* Then */,
 				E7C2A6FB29220A8F008579F8 /* CombineMoya */,
 				E7C2A6FD29220A8F008579F8 /* Moya */,
 				E7C2A6FF29220A8F008579F8 /* ReactiveMoya */,
 				E7C2A70129220A8F008579F8 /* RxMoya */,
 				E7C2A7062925393F008579F8 /* rswift */,
+				E7C2A73529260B68008579F8 /* Then */,
 			);
 			productName = 31st_Joint_Seminar;
 			productReference = E7CE2559291EA7B8006DA24C /* 31st_Joint_Seminar.app */;
@@ -265,9 +265,9 @@
 			mainGroup = E7CE2550291EA7B8006DA24C;
 			packageReferences = (
 				E7C2A6F429220A0D008579F8 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				E7C2A6F729220A1B008579F8 /* XCRemoteSwiftPackageReference "Then" */,
 				E7C2A6FA29220A8F008579F8 /* XCRemoteSwiftPackageReference "Moya" */,
 				E7C2A7052925393F008579F8 /* XCRemoteSwiftPackageReference "R" */,
+				E7C2A73429260B68008579F8 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = E7CE255A291EA7B8006DA24C /* Products */;
 			projectDirPath = "";
@@ -390,6 +390,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -443,6 +444,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -471,6 +473,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "damin.-1st-Joint-Seminar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -499,6 +502,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "damin.-1st-Joint-Seminar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -537,14 +541,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		E7C2A6F729220A1B008579F8 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		E7C2A6FA29220A8F008579F8 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -561,6 +557,14 @@
 				kind = branch;
 			};
 		};
+		E7C2A73429260B68008579F8 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -568,11 +572,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E7C2A6F429220A0D008579F8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		E7C2A6F829220A1B008579F8 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E7C2A6F729220A1B008579F8 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 		E7C2A6FB29220A8F008579F8 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -598,6 +597,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E7C2A7052925393F008579F8 /* XCRemoteSwiftPackageReference "R" */;
 			productName = rswift;
+		};
+		E7C2A73529260B68008579F8 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7C2A73429260B68008579F8 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
