@@ -2,7 +2,7 @@
 //  BorrowCell.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
 
 import UIKit
@@ -16,22 +16,21 @@ class BorrowCell: UICollectionViewCell {
         $0.spacing = 8
     }
     private lazy var bookImg = UIImageView().then {
-        $0.backgroundColor = .lightGray
         $0.image = UIImage(named: "sample")
     }
     private lazy var dateLabel = CustomLabel(padding: UIEdgeInsets(top: 4, left: 7, bottom: 3, right: 10)).then{
-        $0.backgroundColor = .kyobo_green
+        $0.backgroundColor = Color.kybo_green
         $0.text = "D-1"
         $0.textColor = .white
         $0.font = UIFont(name: "Roboto-Medium", size: 12)
     }
     private lazy var titleLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = Color.kybo_black
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.text = "오직 두 사람"
         $0.textAlignment = .left
     }
-    private lazy var btn = CustomBtn(type:.returnBook, borderColor: .kyobo_green, titleColor: .kyobo_green,font: .systemFont(ofSize: 14)).then{
+    private lazy var btn = CustomBtn(type:.returnBook, borderColor: Color.kybo_green!, titleColor: Color.kybo_green!,font: .systemFont(ofSize: 14)).then{
         $0.setTitle(BtnType.returnBook.title, for: .normal)
     }
     func config(_ item : BorrowItem){

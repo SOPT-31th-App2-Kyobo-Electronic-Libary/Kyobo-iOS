@@ -2,7 +2,7 @@
 //  HeaderView.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class HeaderView: UICollectionReusableView {
     private lazy var btn = UIButton(configuration: .plain()).then{
         $0.configuration?.titleAlignment = .trailing
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        $0.configuration?.baseForegroundColor = .black
+        $0.configuration?.baseForegroundColor = Color.kybo_black
         $0.configuration?.imagePadding = 10
         $0.configuration?.imagePlacement = NSDirectionalRectEdge.trailing
         $0.configuration?.buttonSize = .small

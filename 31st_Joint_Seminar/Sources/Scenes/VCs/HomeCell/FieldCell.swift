@@ -2,7 +2,7 @@
 //  FieldCell.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
 
 import UIKit
@@ -15,18 +15,18 @@ class FieldCell: UICollectionViewCell {
         $0.spacing = 4
     }
     private lazy var bookImg = UIImageView().then {
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = Color.kybo_light_gray
         $0.image = UIImage(named: "sample")
     }
     private lazy var titleLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = Color.kybo_black
         $0.text = "트렌드 코리아 2023"
         $0.font = UIFont.systemFont(ofSize: 14)
         $0.numberOfLines = 1
         $0.textAlignment = .left
     }
     private lazy var nameLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = Color.kybo_black
         $0.text = "김난도"
         $0.textAlignment = .left
     }

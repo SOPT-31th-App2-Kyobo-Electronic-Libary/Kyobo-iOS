@@ -20,17 +20,17 @@ class HomeVC: UIViewController {
     }
     var dataSource : UICollectionViewDiffableDataSource<Sections,Item>! = nil
     private lazy var subView = SubView(frame: self.view.bounds).then{
-        $0.backgroundColor = .white
+        $0.backgroundColor = Color.kybo_white
     }
     private lazy var collectionView = UICollectionView(frame: view.bounds,collectionViewLayout: layout()).then{
-        $0.backgroundColor = .white
+        $0.backgroundColor = Color.kybo_white
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.delegate = self
     }
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.kybo_white
         setViews()
         setConstraints()
         registerSubViews()
@@ -53,7 +53,7 @@ class HomeVC: UIViewController {
     func setConstraints(){
         subView.snp.makeConstraints {
             $0.directionalHorizontalEdges.equalTo(safeArea)
-            $0.top.equalTo(safeArea)
+            $0.top.equalToSuperview().offset(60)
             $0.height.equalTo(50)
         }
         collectionView.snp.makeConstraints {

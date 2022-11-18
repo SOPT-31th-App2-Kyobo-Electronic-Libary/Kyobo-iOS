@@ -2,7 +2,7 @@
 //  FooterView.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import Then
 import SnapKit
 class FooterView: UICollectionReusableView {
     static var reuseId : String = "FooterView"
-    private lazy var btn = CustomBtn(type: .borrowBook, borderColor: .black, titleColor: .black,font: .systemFont(ofSize: 16)).then {
+    private lazy var btn = CustomBtn(type: .borrowBook, borderColor: Color.kybo_black!, titleColor: Color.kybo_black!,font: .systemFont(ofSize: 16)).then {
         $0.setTitle(BtnType.borrowBook.title, for: .normal)
     }
     override init(frame: CGRect) {

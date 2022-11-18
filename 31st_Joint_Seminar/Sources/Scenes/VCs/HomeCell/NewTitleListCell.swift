@@ -2,7 +2,7 @@
 //  NewTitleListCell.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ class NewTitleListCell: UICollectionViewCell {
     static var reuseId : String = "NewTitleListCell"
     private var title = UILabel().then{
         $0.textAlignment = .center
-        $0.textColor = .black
+        $0.textColor = Color.kybo_black
         $0.font  = UIFont.systemFont(ofSize: 16)
     }
     func config(_ item : NewBookList){

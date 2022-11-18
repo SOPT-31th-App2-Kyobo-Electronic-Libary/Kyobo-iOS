@@ -2,8 +2,9 @@
 //  SubView.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
+
 import UIKit
 import Then
 import SnapKit
@@ -14,11 +15,11 @@ class SubView : UIView{
         $0.spacing = 7
     }
     private lazy var icon = UIImageView().then{
-        $0.image = UIImage(named:  "Home/star ")
+        $0.image = UIImage(named: "Home/Star ")
     }
     private lazy var titleLabel = UILabel().then {
         $0.text = "홍익대학교"
-        $0.textColor = .black
+        $0.textColor = Color.kybo_black
         $0.font = UIFont.systemFont(ofSize: 18)
     }
     private lazy var magnifyBtn = UIButton().then{

@@ -2,9 +2,8 @@
 //  NewCell.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
-
 import UIKit
 import Then
 import SnapKit
@@ -16,18 +15,17 @@ class NewCell: UICollectionViewCell {
         $0.spacing = 8
     }
     private lazy var bookImg = UIImageView().then {
-        $0.backgroundColor = .lightGray
         $0.image = UIImage(named: "sample")
     }
     private lazy var titleLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = Color.kybo_black
         $0.text = "빠르게 실패하기"
         $0.font = UIFont.systemFont(ofSize: 14)
         $0.numberOfLines = 0
         $0.textAlignment = .left
     }
     private lazy var nameLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = Color.kybo_dark_gray
         $0.text = "존 크럼볼츠"
         $0.textAlignment = .left
     }

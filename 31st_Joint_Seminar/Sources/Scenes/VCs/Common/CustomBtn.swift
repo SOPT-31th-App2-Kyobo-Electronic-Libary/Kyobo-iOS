@@ -2,16 +2,15 @@
 //  CustomBtn.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
-
 import UIKit
 import Then
 import SnapKit
 class CustomBtn : UIButton {
     var type : BtnType
-    var borderColor : UIColor = .green
-    var titleColor : UIColor = .green
+    var borderColor : UIColor = Color.kybo_green!
+    var titleColor : UIColor = Color.kybo_green!
     var font : UIFont = .systemFont(ofSize: 14)
     init(type: BtnType , borderColor : UIColor, titleColor : UIColor, font : UIFont) {
         self.type = type
@@ -27,7 +26,7 @@ class CustomBtn : UIButton {
         self.layer.borderWidth = 1
         self.titleLabel?.font = self.font
         self.setTitleColor(titleColor, for: .normal)
-        self.backgroundColor = .white
+        self.backgroundColor = Color.kybo_white
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

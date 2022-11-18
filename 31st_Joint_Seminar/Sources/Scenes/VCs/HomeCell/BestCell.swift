@@ -2,19 +2,20 @@
 //  BestCell.swift
 //  31st_Joint_Seminar
 //
-//  Created by JEONGEUN KIM on 2022/11/18.
+//  Created by JEONGEUN KIM on 2022/11/19.
 //
 
 import UIKit
-
+import SnapKit
+import Then
 class BestCell: UICollectionViewCell {
     static var reuseId : String = "BestCell"
     private lazy var bookImg = UIImageView().then {
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = Color.kybo_light_gray
         $0.image = UIImage(named: "sample")
     }
     private lazy var numLabel = CustomLabel(padding: UIEdgeInsets(top: 4, left: 7, bottom: 3, right: 10)).then{
-        $0.backgroundColor = .kyobo_green
+        $0.backgroundColor = Color.kybo_green
         $0.text = "1"
         $0.textColor = .white
         $0.font = UIFont.systemFont(ofSize: 10)
@@ -64,7 +65,7 @@ class BestCell: UICollectionViewCell {
         bookImg.addSubview(numLabel)
         self.addSubview(vStack)
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.borderColor = Color.kybo_light_gray?.cgColor
     }
     func setConstraints(){
         vStack.snp.makeConstraints {
