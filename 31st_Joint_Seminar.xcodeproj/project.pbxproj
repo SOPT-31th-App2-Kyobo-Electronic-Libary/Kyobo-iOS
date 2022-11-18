@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75EC2432926324500F23A2F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EC2422926324500F23A2F /* R.generated.swift */; };
+		E75EC247292635EE00F23A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EC246292635EE00F23A2F /* ViewController.swift */; };
+		E7753221292627F40078F0FF /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E7753220292627F40078F0FF /* Rswift */; };
 		E7C2A6E62921D338008579F8 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6E52921D338008579F8 /* UIFont+.swift */; };
 		E7C2A6E82921D392008579F8 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6E72921D392008579F8 /* UIColor+.swift */; };
 		E7C2A6EA29220811008579F8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6E929220811008579F8 /* HomeVC.swift */; };
@@ -20,7 +23,6 @@
 		E7C2A70029220A8F008579F8 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A6FF29220A8F008579F8 /* ReactiveMoya */; };
 		E7C2A70229220A8F008579F8 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A70129220A8F008579F8 /* RxMoya */; };
 		E7C2A704292237D9008579F8 /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A703292237D9008579F8 /* BaseNC.swift */; };
-		E7C2A7072925393F008579F8 /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A7062925393F008579F8 /* rswift */; };
 		E7C2A73629260B68008579F8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E7C2A73529260B68008579F8 /* Then */; };
 		E7CE255D291EA7B8006DA24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE255C291EA7B8006DA24C /* AppDelegate.swift */; };
 		E7CE255F291EA7B8006DA24C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE255E291EA7B8006DA24C /* SceneDelegate.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E75EC2422926324500F23A2F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E75EC246292635EE00F23A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7C2A6E52921D338008579F8 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		E7C2A6E72921D392008579F8 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		E7C2A6E929220811008579F8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 		E7CE25802920DC3F006DA24C /* TempComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempComponent.swift; sourceTree = "<group>"; };
 		E7CE25822920DC48006DA24C /* TempServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempServices.swift; sourceTree = "<group>"; };
 		E7CE25862920DC59006DA24C /* TempAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPIManager.swift; sourceTree = "<group>"; };
+		E7E0BB1E2926263C00855810 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = BuildTools/Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +66,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C2A70229220A8F008579F8 /* RxMoya in Frameworks */,
+				E7753221292627F40078F0FF /* Rswift in Frameworks */,
 				E7C2A6F629220A0D008579F8 /* SnapKit in Frameworks */,
 				E7C2A6FE29220A8F008579F8 /* Moya in Frameworks */,
 				E7C2A73629260B68008579F8 /* Then in Frameworks */,
-				E7C2A7072925393F008579F8 /* rswift in Frameworks */,
 				E7C2A70029220A8F008579F8 /* ReactiveMoya in Frameworks */,
 				E7C2A6FC29220A8F008579F8 /* CombineMoya in Frameworks */,
 			);
@@ -76,6 +81,7 @@
 		E7C2A6F3292208A3008579F8 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				E75EC246292635EE00F23A2F /* ViewController.swift */,
 				E7C2A6E929220811008579F8 /* HomeVC.swift */,
 				E7C2A6EB29220820008579F8 /* CategroyVC.swift */,
 				E7C2A6ED2922083C008579F8 /* NotificationVC.swift */,
@@ -88,6 +94,7 @@
 		E7CE2550291EA7B8006DA24C = {
 			isa = PBXGroup;
 			children = (
+				E7E0BB1E2926263C00855810 /* Package.swift */,
 				E7CE255B291EA7B8006DA24C /* 31st_Joint_Seminar */,
 				E7CE255A291EA7B8006DA24C /* Products */,
 			);
@@ -104,6 +111,7 @@
 		E7CE255B291EA7B8006DA24C /* 31st_Joint_Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				E75EC2422926324500F23A2F /* R.generated.swift */,
 				E7CE256A291EA7BA006DA24C /* Info.plist */,
 				E7CE25722920D8DF006DA24C /* Global */,
 				E7CE25742920D92B006DA24C /* Resources */,
@@ -217,6 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7CE256D291EA7BA006DA24C /* Build configuration list for PBXNativeTarget "31st_Joint_Seminar" */;
 			buildPhases = (
+				E7E0BB1D292625C200855810 /* ShellScript */,
 				E7CE2555291EA7B8006DA24C /* Sources */,
 				E7CE2556291EA7B8006DA24C /* Frameworks */,
 				E7CE25882920E2FC006DA24C /* Resources */,
@@ -232,8 +241,8 @@
 				E7C2A6FD29220A8F008579F8 /* Moya */,
 				E7C2A6FF29220A8F008579F8 /* ReactiveMoya */,
 				E7C2A70129220A8F008579F8 /* RxMoya */,
-				E7C2A7062925393F008579F8 /* rswift */,
 				E7C2A73529260B68008579F8 /* Then */,
+				E7753220292627F40078F0FF /* Rswift */,
 			);
 			productName = 31st_Joint_Seminar;
 			productReference = E7CE2559291EA7B8006DA24C /* 31st_Joint_Seminar.app */;
@@ -266,8 +275,8 @@
 			packageReferences = (
 				E7C2A6F429220A0D008579F8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E7C2A6FA29220A8F008579F8 /* XCRemoteSwiftPackageReference "Moya" */,
-				E7C2A7052925393F008579F8 /* XCRemoteSwiftPackageReference "R" */,
 				E7C2A73429260B68008579F8 /* XCRemoteSwiftPackageReference "Then" */,
+				E775321F292627F40078F0FF /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = E7CE255A291EA7B8006DA24C /* Products */;
 			projectDirPath = "";
@@ -291,6 +300,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E7E0BB1D292625C200855810 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=macosx\nswift run -c release rswift generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7CE2555291EA7B8006DA24C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -298,6 +330,7 @@
 			files = (
 				E7CE2571291F210D006DA24C /* AppTabBarController.swift in Sources */,
 				E7C2A6EC29220820008579F8 /* CategroyVC.swift in Sources */,
+				E75EC2432926324500F23A2F /* R.generated.swift in Sources */,
 				E7C2A6EA29220811008579F8 /* HomeVC.swift in Sources */,
 				E7C2A6E62921D338008579F8 /* UIFont+.swift in Sources */,
 				E7CE255D291EA7B8006DA24C /* AppDelegate.swift in Sources */,
@@ -309,6 +342,7 @@
 				E7CE25832920DC48006DA24C /* TempServices.swift in Sources */,
 				E7C2A6F229220863008579F8 /* MyPageVC.swift in Sources */,
 				E7CE25812920DC3F006DA24C /* TempComponent.swift in Sources */,
+				E75EC247292635EE00F23A2F /* ViewController.swift in Sources */,
 				E7C2A6F02922084D008579F8 /* LibrarySearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +567,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E775321F292627F40078F0FF /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 		E7C2A6F429220A0D008579F8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -549,14 +591,6 @@
 				minimumVersion = 15.0.0;
 			};
 		};
-		E7C2A7052925393F008579F8 /* XCRemoteSwiftPackageReference "R" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mac-cain13/R.swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		E7C2A73429260B68008579F8 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -568,6 +602,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E7753220292627F40078F0FF /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E775321F292627F40078F0FF /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
 		E7C2A6F529220A0D008579F8 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E7C2A6F429220A0D008579F8 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -592,11 +631,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E7C2A6FA29220A8F008579F8 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
-		};
-		E7C2A7062925393F008579F8 /* rswift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E7C2A7052925393F008579F8 /* XCRemoteSwiftPackageReference "R" */;
-			productName = rswift;
 		};
 		E7C2A73529260B68008579F8 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
