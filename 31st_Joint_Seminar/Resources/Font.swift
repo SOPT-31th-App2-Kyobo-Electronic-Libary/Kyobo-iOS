@@ -5,7 +5,7 @@
 //  Created by JEONGEUN KIM on 2022/11/19.
 //
 //
-//import UIKit
+import UIKit
 //struct Font {
 //    static let lg = FontBase(size: .lg)
 //    static let base = FontBase(size: .base)
