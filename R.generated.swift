@@ -155,6 +155,197 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.color.kyobo` struct is generated, and contains static references to 9 colors.
+    struct kyobo {
+      /// Color `_Black`.
+      static let _Black = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Black")
+      /// Color `_Blue`.
+      static let _Blue = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Blue")
+      /// Color `_Dark_gray`.
+      static let _Dark_gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Dark_gray")
+      /// Color `_Gray`.
+      static let _Gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Gray")
+      /// Color `_Green`.
+      static let _Green = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Green")
+      /// Color `_Light_Green`.
+      static let _Light_Green = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Light_Green")
+      /// Color `_Light_gray`.
+      static let _Light_gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Light_gray")
+      /// Color `_Red`.
+      static let _Red = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_Red")
+      /// Color `_White`.
+      static let _White = Rswift.ColorResource(bundle: R.hostingBundle, name: "kyobo/_White")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Black", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Black(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Black, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Blue", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Blue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Blue, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Dark_gray", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Dark_gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Dark_gray, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Gray", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Gray, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Green", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Green(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Green, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Light_Green", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Light_Green(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Light_Green, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Light_gray", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Light_gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Light_gray, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_Red", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _Red(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._Red, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_White", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _White(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.kyobo._White, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Black", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Black(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Black.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Blue", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Blue(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Blue.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Dark_gray", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Dark_gray(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Dark_gray.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Gray", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Gray(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Gray.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Green", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Green(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Green.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Light_Green", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Light_Green(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Light_Green.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Light_gray", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Light_gray(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Light_gray.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_Red", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _Red(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._Red.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_White", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _White(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.kyobo._White.name)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `AppleSDGothicNeo.ttc`.
+    static let appleSDGothicNeoTtc = Rswift.FileResource(bundle: R.hostingBundle, name: "AppleSDGothicNeo", pathExtension: "ttc")
+
+    /// `bundle.url(forResource: "AppleSDGothicNeo", withExtension: "ttc")`
+    static func appleSDGothicNeoTtc(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.appleSDGothicNeoTtc
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
@@ -241,6 +432,48 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.notificationBox_selected_icon, compatibleWith: traitCollection)
     }
     #endif
+
+    /// This `R.image.home` struct is generated, and contains static references to 4 images.
+    struct home {
+      /// Image `Star `.
+      static let star = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/Star ")
+      /// Image `arrow`.
+      static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/arrow")
+      /// Image `magnify`.
+      static let magnify = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/magnify")
+      /// Image `sample`.
+      static let sample = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/sample")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Star ", bundle: ..., traitCollection: ...)`
+      static func star(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.star, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "arrow", bundle: ..., traitCollection: ...)`
+      static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.arrow, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "magnify", bundle: ..., traitCollection: ...)`
+      static func magnify(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.magnify, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "sample", bundle: ..., traitCollection: ...)`
+      static func sample(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.sample, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }
