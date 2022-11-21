@@ -67,7 +67,7 @@
 		09341A392927ED6E006B9A0B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		09341A3B2927ED71006B9A0B /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		09341A3D2927FAE4006B9A0B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		0978DABF2927FE6800961C2F /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = ../Sources/Scenes/VCs/AppleSDGothicNeo.ttc; sourceTree = "<group>"; };
+		0978DABF2927FE6800961C2F /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeo.ttc; sourceTree = "<group>"; };
 		E75EC2422926324500F23A2F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E75EC246292635EE00F23A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7C2A6E52921D338008579F8 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -150,6 +150,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		E773E80B292B956C00C98A62 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0978DABF2927FE6800961C2F /* AppleSDGothicNeo.ttc */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E7C2A6F3292208A3008579F8 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,11 +226,11 @@
 		E7CE25742920D92B006DA24C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E773E80B292B956C00C98A62 /* Fonts */,
 				E7CE2565291EA7BA006DA24C /* Assets.xcassets */,
 				09341A232927EBD1006B9A0B /* Color.swift */,
 				09341A252927EBE0006B9A0B /* Font.swift */,
 				09341A3D2927FAE4006B9A0B /* Utils.swift */,
-				0978DABF2927FE6800961C2F /* AppleSDGothicNeo.ttc */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
