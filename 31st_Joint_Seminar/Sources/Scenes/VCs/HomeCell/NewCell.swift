@@ -20,7 +20,7 @@ class NewCell: UICollectionViewCell {
     private lazy var titleLabel = UILabel().then {
         $0.textColor = Color.kybo_black
         $0.text = "빠르게 실패하기"
-        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.font = .kyoboIosH5
         $0.numberOfLines = 0
         $0.textAlignment = .left
     }
@@ -28,11 +28,12 @@ class NewCell: UICollectionViewCell {
         $0.textColor = Color.kybo_dark_gray
         $0.text = "존 크럼볼츠"
         $0.textAlignment = .left
+        $0.font = .kyoboIosBody4
     }
-    func config(_ item : NewItem){
-        self.bookImg.image = UIImage(named: item.img)
-        self.titleLabel.text = item.title
-        self.nameLabel.text = item.name
+    func updateData(new :  NewBook!){
+        self.bookImg.kf.setImage(with: URL(string: new.image), placeholder: UIImage(systemName: "hands.sparkles.fill"))
+        self.titleLabel.text = new.name
+        self.nameLabel.text = new.author
     }
     override init(frame :CGRect){
         super.init(frame: .zero)

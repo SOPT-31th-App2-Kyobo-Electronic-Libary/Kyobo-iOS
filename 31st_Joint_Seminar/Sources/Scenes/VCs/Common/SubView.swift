@@ -20,7 +20,7 @@ class SubView : UIView{
     private lazy var titleLabel = UILabel().then {
         $0.text = "홍익대학교"
         $0.textColor = Color.kybo_black
-        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.font = .kyoboIosH2
     }
     private lazy var magnifyBtn = UIButton().then{
         $0.setImage(UIImage(named: "Home/magnify"), for: .normal)

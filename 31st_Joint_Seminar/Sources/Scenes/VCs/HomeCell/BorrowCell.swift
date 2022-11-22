@@ -8,9 +8,10 @@
 import UIKit
 import Then
 import SnapKit
-
+import Kingfisher
 class BorrowCell: UICollectionViewCell {
     static var reuseId : String = "BorrowCell"
+    var bookData : MainBooklist?
     private lazy var vStack = UIStackView(arrangedSubviews: [bookImg,titleLabel,btn]).then{
         $0.axis = .vertical
         $0.spacing = 8
@@ -22,22 +23,23 @@ class BorrowCell: UICollectionViewCell {
         $0.backgroundColor = Color.kybo_green
         $0.text = "D-1"
         $0.textColor = .white
-        $0.font = UIFont(name: "Roboto-Medium", size: 12)
+        $0.font = .kyoboIosBody3
     }
     private lazy var titleLabel = UILabel().then {
         $0.textColor = Color.kybo_black
-        $0.font = UIFont.systemFont(ofSize: 16)
+        $0.font = .kyoboIosH3
         $0.text = "오직 두 사람"
         $0.textAlignment = .left
     }
-    private lazy var btn = CustomBtn(type:.returnBook, borderColor: Color.kybo_green!, titleColor: Color.kybo_green!,font: .systemFont(ofSize: 14)).then{
+    private lazy var btn = CustomBtn(type:.returnBook, borderColor: Color.kybo_green!, titleColor: Color.kybo_green!,font: .kyoboIosH5).then{
         $0.setTitle(BtnType.returnBook.title, for: .normal)
     }
-    func config(_ item : BorrowItem){
-        self.bookImg.image = UIImage(named: item.img)
-        self.titleLabel.text = item.title
-        self.dateLabel.text = item.date
+    func updateData(borrow:  LendingBook!){
+        self.bookImg.kf.setImage(with: URL(string: borrow.image), placeholder: UIImage(systemName: "hands.sparkles.fill"))
+        self.titleLabel.text = borrow.name
+        self.dateLabel.text = "D-\(borrow.dDay)"
     }
+
     override init(frame :CGRect){
         super.init(frame: .zero)
         setViews()
