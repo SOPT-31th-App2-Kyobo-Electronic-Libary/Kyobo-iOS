@@ -13,7 +13,7 @@ class NewTitleListCell: UICollectionViewCell {
     private var title = UILabel().then{
         $0.textAlignment = .center
         $0.textColor = Color.kybo_black
-        $0.font  = UIFont.systemFont(ofSize: 16)
+        $0.font  = .kyoboIosBody2
     }
     func config(_ item : NewBookList){
         self.title.text = item.title

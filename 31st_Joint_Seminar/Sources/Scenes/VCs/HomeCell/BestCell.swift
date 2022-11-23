@@ -18,7 +18,8 @@ class BestCell: UICollectionViewCell {
         $0.backgroundColor = Color.kybo_green
         $0.text = "1"
         $0.textColor = .white
-        $0.font = UIFont.systemFont(ofSize: 10)
+        $0.font = .kyoboIosBody5
+        $0.textAlignment = .center
     }
     private lazy var vStack = UIStackView(arrangedSubviews: [titleLabel,nameLabel,subTitleLabel]).then{
         $0.axis = .vertical
@@ -27,29 +28,29 @@ class BestCell: UICollectionViewCell {
     private lazy var titleLabel = UILabel().then {
         $0.textColor = .black
         $0.text = "빠르게 실패하기"
-        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.font = .kyoboIosH5
         $0.numberOfLines = 0
         $0.textAlignment = .left
     }
     private lazy var nameLabel = UILabel().then {
         $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.font = .kyoboIosBody4
         $0.text = "존 크럼볼츠"
         $0.textAlignment = .left
     }
     private lazy var subTitleLabel = UILabel().then{
         $0.textColor = .black
         $0.text = "2023년 준비를 위한 트렌드 필독서"
-        $0.font = UIFont.systemFont(ofSize: 12)
+        $0.font = .kyoboIosBody3
         $0.numberOfLines = 0
         $0.textAlignment = .left
     }
-    func config(_ item : BestItem){
-        self.numLabel.text = "\(item.id)"
-        self.bookImg.image = UIImage(named: item.img)
-        self.titleLabel.text = item.title
-        self.nameLabel.text = item.name
-        self.subTitleLabel.text = item.subTitle
+    func updateData( best: BestBook!){
+        self.numLabel.text = "\(best.id)"
+        self.bookImg.kf.setImage(with: URL(string: best.image), placeholder: UIImage(systemName: "hands.sparkles.fill"))
+        self.titleLabel.text = best.name
+        self.nameLabel.text = best.author
+        self.subTitleLabel.text = best.bookDescription
     }
     override init(frame :CGRect){
         super.init(frame: .zero)

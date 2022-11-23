@@ -21,7 +21,7 @@ class FieldCell: UICollectionViewCell {
     private lazy var titleLabel = UILabel().then {
         $0.textColor = Color.kybo_black
         $0.text = "트렌드 코리아 2023"
-        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.font = .kyoboIosH5
         $0.numberOfLines = 1
         $0.textAlignment = .left
     }
@@ -29,11 +29,12 @@ class FieldCell: UICollectionViewCell {
         $0.textColor = Color.kybo_black
         $0.text = "김난도"
         $0.textAlignment = .left
+        $0.font = .kyoboIosBody4
     }
-    func config(_ item : FieldItem){
-        self.bookImg.image = UIImage(named: item.img)
-        self.titleLabel.text = item.title
-        self.nameLabel.text = item.name
+    func updateData(category:  Category!){
+        self.bookImg.kf.setImage(with: URL(string: category.image), placeholder: UIImage(systemName: "hands.sparkles.fill"))
+        self.titleLabel.text = category.name
+        self.nameLabel.text = category.author
     }
     override init(frame :CGRect){
         super.init(frame: .zero)

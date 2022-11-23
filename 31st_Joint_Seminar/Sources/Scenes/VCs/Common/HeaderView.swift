@@ -11,12 +11,12 @@ import SnapKit
 class HeaderView: UICollectionReusableView {
     static var reuseId : String = "HeaderView"
     private lazy var titleLabel = UILabel().then{
-        $0.font = UIFont(name: "Roboto-Bold", size: 16)
+        $0.font = .kyoboIosH1
     }
     
     private lazy var btn = UIButton(configuration: .plain()).then{
         $0.configuration?.titleAlignment = .trailing
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        $0.titleLabel?.font = .kyoboIosBody4
         $0.configuration?.baseForegroundColor = Color.kybo_black
         $0.configuration?.imagePadding = 10
         $0.configuration?.imagePlacement = NSDirectionalRectEdge.trailing
