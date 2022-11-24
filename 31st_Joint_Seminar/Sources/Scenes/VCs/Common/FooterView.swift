@@ -10,7 +10,7 @@ import Then
 import SnapKit
 class FooterView: UICollectionReusableView {
     static var reuseId : String = "FooterView"
-    private lazy var btn = CustomBtn(type: .borrowBook, borderColor: Color.kybo_black!, titleColor: Color.kybo_black!,font: .systemFont(ofSize: 16)).then {
+    private lazy var btn = CustomBtn(type: .borrowBook, borderColor: Color.kybo_black!, titleColor: Color.kybo_black!,font: .kyoboIosBody2).then {
         $0.setTitle(BtnType.borrowBook.title, for: .normal)
     }
     override init(frame: CGRect) {

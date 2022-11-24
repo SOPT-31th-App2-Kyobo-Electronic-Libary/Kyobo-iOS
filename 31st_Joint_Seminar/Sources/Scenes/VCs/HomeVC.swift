@@ -9,11 +9,12 @@ import UIKit
 import Then
 import SnapKit
 class HomeVC: UIViewController {
-    let borrowItem : [BorrowItem] = BorrowItem.item
-    let bestItem : [BestItem] = BestItem.item
-    let newItem :[ NewItem] = NewItem.item
+    var bookData : MainBooklist?
+    var borrowData : LendingBook?
+    var bestData : BestBook?
+    var newData : NewBook?
+    var category : Category?
     let newTitleList : [NewBookList] = NewBookList.title
-    let fieldItem :[FieldItem] = FieldItem.item
     typealias Item = AnyHashable
     enum Sections : Int, CaseIterable,Hashable{
         case borrowList, bestList,newTitleList, newList, fieldList
@@ -36,6 +37,7 @@ class HomeVC: UIViewController {
         registerSubViews()
         setupDataSource()
         reloadData()
+        borrowBook()
     }
     func registerSubViews(){
         collectionView.register(BorrowCell.self, forCellWithReuseIdentifier: BorrowCell.reuseId)
@@ -68,23 +70,23 @@ class HomeVC: UIViewController {
             switch section{
             case .borrowList:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BorrowCell.reuseId, for: indexPath) as! BorrowCell
-                cell.config(item as! BorrowItem)
+                cell.updateData(borrow: item as? LendingBook )
                 return cell
             case .bestList :
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BestCell.reuseId, for: indexPath) as! BestCell
-                    cell.config(item as! BestItem)
+                    cell.updateData( best: item as? BestBook)
                     return cell
             case .newTitleList :
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewTitleListCell.reuseId, for: indexPath) as! NewTitleListCell
-                    cell.config(item as! NewBookList)
+                cell.config((item as? NewBookList)!)
                 return cell
             case .newList :
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewCell.reuseId, for: indexPath) as! NewCell
-                        cell.config(item as! NewItem)
+                cell.updateData( new: item as? NewBook)
                         return cell
             case .fieldList :
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FieldCell.reuseId, for: indexPath) as! FieldCell
-                cell.config(item as! FieldItem)
+                cell.updateData( category: item as? Category)
                 return cell
             }
         })
@@ -95,11 +97,11 @@ class HomeVC: UIViewController {
             dataSource.apply(snapshot, animatingDifferences: false)
         }
         snapshot.appendSections([.borrowList,.bestList,.newTitleList,.newList,.fieldList])
-        snapshot.appendItems(borrowItem,toSection: .borrowList)
-        snapshot.appendItems(bestItem,toSection: .bestList)
+        snapshot.appendItems([],toSection: .borrowList)
+        snapshot.appendItems([],toSection: .bestList)
         snapshot.appendItems(newTitleList,toSection: .newTitleList)
-        snapshot.appendItems(newItem,toSection: .newList)
-        snapshot.appendItems(fieldItem,toSection: .fieldList)
+        snapshot.appendItems([],toSection: .newList)
+        snapshot.appendItems([],toSection: .fieldList)
         dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
             if kind == UICollectionView.elementKindSectionHeader {
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseId, for: indexPath) as? HeaderView else {return UICollectionReusableView()}
@@ -122,6 +124,14 @@ class HomeVC: UIViewController {
                 return footer
             }
         }
+    }
+    private func updateData(borrow : [LendingBook],best:[BestBook],new :[NewBook],category :[Category]){
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems(borrow,toSection: .borrowList)
+        snapshot.appendItems(best,toSection: .bestList)
+        snapshot.appendItems(new,toSection: .newList)
+        snapshot.appendItems(category,toSection: .fieldList)
+        dataSource.apply(snapshot)
     }
 
      func layout() -> UICollectionViewLayout{
@@ -163,9 +173,7 @@ class HomeVC: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .estimated(16))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 6)
-        group.interItemSpacing = .fixed(spacing)
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = spacing
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
         section.boundarySupplementaryItems = [header]
@@ -212,5 +220,25 @@ class HomeVC: UIViewController {
 extension HomeVC : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
+    }
+}
+extension HomeVC {
+    func borrowBook(){
+        MainAPI().bookProvider.request(.mainBookList) { response in
+            switch response {
+            case .success(let result):
+                do{
+                    let filteredResponse = try result.filterSuccessfulStatusCodes()
+                    self.bookData = try filteredResponse.map(MainBooklist.self)
+                    if let result = self.bookData?.data{
+                        self.updateData(borrow: result.lendingBook, best: result.bestBook, new: result.newBook, category: result.categoryBook)
+                    }
+                }catch(let error){
+                    print("catch error :\(error.localizedDescription)")
+                }
+            case .failure(let error):
+                print("failure :\(error.localizedDescription)")
+            }
+        }
     }
 }

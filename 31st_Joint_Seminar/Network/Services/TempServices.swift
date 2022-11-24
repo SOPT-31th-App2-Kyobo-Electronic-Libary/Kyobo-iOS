@@ -6,5 +6,49 @@
 //
 
 import Foundation
+import Moya
 
-///임시파일 삭제하고 사용하세욧
+enum MainRouter {
+    case mainBookList
+}
+
+extension MainRouter : TargetType {
+    var baseURL: URL {
+        return URL(string: Environment.baseURL)!
+    }
+    var path: String {
+        switch self {
+        case .mainBookList :
+           return "/user/1/main"
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .mainBookList :
+            return .get
+        }
+    }
+    
+    var sampleData: Data {
+        return Data()
+    }
+    
+    var task: Task {
+        switch self {
+        case .mainBookList :
+            return .requestPlain
+
+        }
+    }
+    var validationType: Moya.ValidationType {
+           return .successAndRedirectCodes
+        
+       }
+    
+    var headers: [String: String]? {
+        return Environment.Header.applicationJsonHeader()
+      }
+    }
+
+
