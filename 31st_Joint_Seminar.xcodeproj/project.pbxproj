@@ -23,6 +23,7 @@
 		09341A3C2927ED71006B9A0B /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09341A3B2927ED71006B9A0B /* SubView.swift */; };
 		09341A3E2927FAE4006B9A0B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09341A3D2927FAE4006B9A0B /* Utils.swift */; };
 		0978DAC02927FE6800961C2F /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0978DABF2927FE6800961C2F /* AppleSDGothicNeo.ttc */; };
+		6C9EA1E0292F4CCB006486BD /* bookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EA1DF292F4CCB006486BD /* bookDetailVC.swift */; };
 		E75EC2432926324500F23A2F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EC2422926324500F23A2F /* R.generated.swift */; };
 		E75EC247292635EE00F23A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EC246292635EE00F23A2F /* ViewController.swift */; };
 		E7753221292627F40078F0FF /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E7753220292627F40078F0FF /* Rswift */; };
@@ -68,6 +69,7 @@
 		09341A3B2927ED71006B9A0B /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		09341A3D2927FAE4006B9A0B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0978DABF2927FE6800961C2F /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = ../Sources/Scenes/VCs/AppleSDGothicNeo.ttc; sourceTree = "<group>"; };
+		6C9EA1DF292F4CCB006486BD /* bookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookDetailVC.swift; sourceTree = "<group>"; };
 		E75EC2422926324500F23A2F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E75EC246292635EE00F23A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7C2A6E52921D338008579F8 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				E75EC246292635EE00F23A2F /* ViewController.swift */,
 				E7C2A6E929220811008579F8 /* HomeVC.swift */,
+				6C9EA1DF292F4CCB006486BD /* bookDetailVC.swift */,
 				09341A322927ED47006B9A0B /* Common */,
 				09341A272927EC98006B9A0B /* HomeCell */,
 				E7C2A6EB29220820008579F8 /* CategroyVC.swift */,
@@ -417,6 +420,7 @@
 				09341A342927ED56006B9A0B /* CustomBtn.swift in Sources */,
 				09341A312927ECFE006B9A0B /* FieldCell.swift in Sources */,
 				E75EC2432926324500F23A2F /* R.generated.swift in Sources */,
+				6C9EA1E0292F4CCB006486BD /* bookDetailVC.swift in Sources */,
 				E7C2A6EA29220811008579F8 /* HomeVC.swift in Sources */,
 				09341A3C2927ED71006B9A0B /* SubView.swift in Sources */,
 				E7C2A6E62921D338008579F8 /* UIFont+.swift in Sources */,
