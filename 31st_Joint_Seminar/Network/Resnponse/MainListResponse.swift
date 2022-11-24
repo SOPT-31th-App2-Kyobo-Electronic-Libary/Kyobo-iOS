@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-import Foundation
-
 // MARK: - MainBooklist
 struct MainBooklist: Codable, Hashable {
     let status: Int

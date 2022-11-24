@@ -9,6 +9,6 @@ import Foundation
 import Moya
 
 public class MainAPI {
-    let bookProvider = MoyaProvider<MainRouter>(plugins:[MoyaLoggingPlugin()])
+    let bookProvider = MoyaProvider<MainRouter>(plugins:[NetworkLoggerPlugin(verbose: true)])
 }
 
