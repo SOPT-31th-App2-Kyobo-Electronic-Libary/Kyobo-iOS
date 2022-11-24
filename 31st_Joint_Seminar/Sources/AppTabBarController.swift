@@ -9,22 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-class AppTabBar: UITabBar {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        clipsToBounds = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 final class AppTabBarController: UITabBarController {
-    
-    // MARK: - Properties
-    private let appTabBar = AppTabBar()
-    
+
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -68,6 +54,7 @@ final class AppTabBarController: UITabBarController {
     
     private func setTabBarItemStyle() {
         tabBar.tintColor = .kyobo_green
+        tabBar.backgroundColor = .white
     }
     
 }
