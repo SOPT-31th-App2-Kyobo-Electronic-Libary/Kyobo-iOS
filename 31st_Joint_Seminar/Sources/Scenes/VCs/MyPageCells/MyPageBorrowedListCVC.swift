@@ -13,19 +13,17 @@ import Kingfisher
 final class MyPageBorrowedListCVC: UICollectionViewCell {
     static var reuseID: String = "MyPageBorrowedListCVC"
     
-    var bookData : MainBooklist?
-    
-    
+    var bookData : MyPageList?
     
     private lazy var bookImg = UIImageView().then {
         $0.image = R.image.sampleBook_img()
     }
     
-    // c
-    private lazy var dDayLabel = CustomLabel(padding: UIEdgeInsets(top: 4, left: 7, bottom: 3, right: 10)).then{
+    private lazy var dDayLabel = UILabel().then{
         $0.text = "D-1"
         $0.textColor = .red
         $0.font = .kyoboIosH3
+        $0.textAlignment = .left
     }
     
     private lazy var bookTitle = UILabel().then {
@@ -49,8 +47,8 @@ final class MyPageBorrowedListCVC: UICollectionViewCell {
     
     private lazy var renewalBtn = UIButton().then {
         $0.setTitle("연장하기", for: .normal)
-        $0.titleLabel?.textColor = Color.kybo_black
         $0.titleLabel?.font = .kyoboIosBody2
+        $0.setTitleColor(Color.kybo_black, for: .normal)
         $0.backgroundColor = Color.kybo_white
         $0.layer.cornerRadius = 8
         $0.layer.borderColor = Color.kybo_green?.cgColor
@@ -67,10 +65,12 @@ final class MyPageBorrowedListCVC: UICollectionViewCell {
     private lazy var vStack = UIStackView(arrangedSubviews: [dDayLabel, bookTitle, borrowDate, returnDate, btnStack]).then {
         $0.axis = .vertical
         $0.alignment = .leading
+        $0.spacing = 7
     }
     
     private lazy var btnStack = UIStackView(arrangedSubviews: [renewalBtn, returnBtn]).then {
         $0.axis = .horizontal
+        $0.spacing = 7
         $0.alignment = .fill
     }
     
@@ -87,16 +87,18 @@ final class MyPageBorrowedListCVC: UICollectionViewCell {
     }
     
     // MARK: - Function
-    func updateData(borrowInfo: LendingBook!) {
-        self.bookImg.kf.setImage(with: URL(string: borrowInfo.image), placeholder: UIImage(systemName: "hands.sparkles.fill" ))
-        self.dDayLabel.text = "D-\(borrowInfo.dDay)"
-        self.bookTitle.text = borrowInfo.name
-        self.borrowDate.text = borrowInfo.lendingDate
-        self.returnDate.text = borrowInfo.returnDate
+    func updateInfo(lendingInfo: UserLendingInfo!) {
+        self.bookImg.kf.setImage(with: URL(string: lendingInfo.image), placeholder: UIImage(systemName: "hands.sparkles.fill" ))
+        self.bookTitle.text = lendingInfo.name
+        self.borrowDate.text = lendingInfo.lendingDate
+        self.returnDate.text = lendingInfo.returnDate
+        self.dDayLabel.text = "D-\(lendingInfo.dDay)"
+        if lendingInfo.dDay == 0{
+            self.dDayLabel.text = "반납일"
+        }
     }
     
     func setupViews(){
-        
         [bookImg, vStack].forEach {
             self.addSubview($0)
         }
@@ -104,39 +106,41 @@ final class MyPageBorrowedListCVC: UICollectionViewCell {
     }
     func setLayout(){
         bookImg.snp.makeConstraints {
-            $0.leading.top.equalToSuperview()
-            $0.height.equalToSuperview()
+            $0.leading.top.height.equalToSuperview()
+            $0.width.equalTo(92)
         }
         
         vStack.snp.makeConstraints {
             $0.leading.equalTo(bookImg.snp.trailing).offset(24)
-            $0.top.equalToSuperview()
-            $0.height.equalToSuperview()
+            $0.top.height.equalToSuperview()
         }
         
         ///vStack Layout
         dDayLabel.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
             $0.height.equalTo(16)
         }
         bookTitle.snp.makeConstraints {
-            $0.top.equalTo(dDayLabel.snp.bottom).offset(7)
-            $0.leading.equalToSuperview()
+
             $0.height.equalTo(18)
         }
         borrowDate.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.top.equalTo(bookTitle.snp.bottom).offset(7)
             $0.height.equalTo(16)
         }
         returnDate.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.top.equalTo(bookTitle.snp.bottom).offset(7)
             $0.height.equalTo(16)
         }
         btnStack.snp.makeConstraints {
-            $0.top.equalTo(returnDate.snp.bottom).offset(12)
-            $0.directionalHorizontalEdges.equalToSuperview()
+            $0.height.equalTo(35)
+        }
+        
+        /// btnStack Layout
+        renewalBtn.snp.makeConstraints {
+            $0.width.equalTo(112)
+            $0.height.equalTo(34)
+        }
+        returnBtn.snp.makeConstraints {
+            $0.width.equalTo(112)
+            $0.height.equalTo(34)
         }
     }
 }

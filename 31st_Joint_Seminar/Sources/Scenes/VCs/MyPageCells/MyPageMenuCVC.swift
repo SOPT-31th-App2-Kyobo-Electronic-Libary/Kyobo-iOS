@@ -20,25 +20,17 @@ final class MyPageMenuCVC: UICollectionViewCell {
     
     func config(_ item: MyPageMenuList, index: IndexPath){
         self.title.text = item.title
-        if index.row == 0{
-            print("인덱스! \(index)")
-            self.title.textColor = Color.kybo_black
-            self.title.font = .kyoboIosH3
-        }
     }
     
-    
+    /// 셀 선택시 폰트 변경
     override var isSelected: Bool {
       didSet {
         if !isSelected {
             self.title.textColor = Color.kybo_gray
             self.title.font = .kyoboIosBody1
-            print("NotSelected")
         } else {
             self.title.textColor = Color.kybo_black
-            self.title.font = .kyoboIosH3
-            print("Selected")
-            
+            self.title.font = .kyoboIosH3            
         }
       }
     }

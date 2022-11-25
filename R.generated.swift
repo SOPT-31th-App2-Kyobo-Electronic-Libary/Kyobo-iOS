@@ -349,9 +349,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-
-  /// This `R.image` struct is generated, and contains static references to 14 images.
+  /// This `R.image` struct is generated, and contains static references to 16 images.
   struct image {
+    /// Image `Frame 59480`.
+    static let frame59480 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Frame 59480")
+    /// Image `Frame 59509`.
+    static let frame59509 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Frame 59509")
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
     /// Image `category_icon`.
@@ -362,8 +365,14 @@ struct R: Rswift.Validatable {
     static let home_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_icon")
     /// Image `home_selected_icon`.
     static let home_selected_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "home_selected_icon")
+    /// Image `kyobo_icon_logout`.
+    static let kyobo_icon_logout = Rswift.ImageResource(bundle: R.hostingBundle, name: "kyobo_icon_logout")
+    /// Image `kyobo_icon_settings`.
+    static let kyobo_icon_settings = Rswift.ImageResource(bundle: R.hostingBundle, name: "kyobo_icon_settings")
     /// Image `library_search_icon`.
     static let library_search_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "library_search_icon")
+    /// Image `magnify_icon`.
+    static let magnify_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "magnify_icon")
     /// Image `myPage_icon`.
     static let myPage_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "myPage_icon")
     /// Image `myPage_selected_icon`.
@@ -372,6 +381,22 @@ struct R: Rswift.Validatable {
     static let notificationBox_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBox_icon")
     /// Image `notificationBox_selected_icon`.
     static let notificationBox_selected_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBox_selected_icon")
+    /// Image `sampleBook_img`.
+    static let sampleBook_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "sampleBook_img")
+    /// Image `star_icon`.
+    static let star_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "star_icon")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Frame 59480", bundle: ..., traitCollection: ...)`
+    static func frame59480(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.frame59480, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Frame 59509", bundle: ..., traitCollection: ...)`
+    static func frame59509(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.frame59509, compatibleWith: traitCollection)
     /// Image `recent_search_1`.
     static let recent_search_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "recent_search_1")
     /// Image `recent_search_2`.
@@ -415,9 +440,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kyobo_icon_logout", bundle: ..., traitCollection: ...)`
+    static func kyobo_icon_logout(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kyobo_icon_logout, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kyobo_icon_settings", bundle: ..., traitCollection: ...)`
+    static func kyobo_icon_settings(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kyobo_icon_settings, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "library_search_icon", bundle: ..., traitCollection: ...)`
     static func library_search_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.library_search_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "magnify_icon", bundle: ..., traitCollection: ...)`
+    static func magnify_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.magnify_icon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -450,6 +496,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sampleBook_img", bundle: ..., traitCollection: ...)`
+    static func sampleBook_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sampleBook_img, compatibleWith: traitCollection)
     /// `UIImage(named: "recent_search_1", bundle: ..., traitCollection: ...)`
     static func recent_search_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.recent_search_1, compatibleWith: traitCollection)
@@ -457,6 +506,12 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "star_icon", bundle: ..., traitCollection: ...)`
+    static func star_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
     /// `UIImage(named: "recent_search_2", bundle: ..., traitCollection: ...)`
     static func recent_search_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.recent_search_2, compatibleWith: traitCollection)

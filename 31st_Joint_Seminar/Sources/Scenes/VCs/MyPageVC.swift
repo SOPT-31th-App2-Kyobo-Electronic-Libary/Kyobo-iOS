@@ -52,8 +52,8 @@ final class MyPageVC: UIViewController {
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     
     let menuTitleList: [MyPageMenuList] = MyPageMenuList.titles
-    var borrowData: LendingBook?
-    var bookData : MainBooklist?
+    var LendingData: UserLendingInfo?
+    var userData : MyPageList?
     
     typealias Item = AnyHashable
     enum Sections: Int, CaseIterable, Hashable {
@@ -65,8 +65,9 @@ final class MyPageVC: UIViewController {
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout()).then {
         $0.backgroundColor = Color.kybo_white
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        $0.showsVerticalScrollIndicator = false
         $0.delegate = self
-        $0.isScrollEnabled = false
+//        $0.isScrollEnabled = false
     }
     
     // MARK: - View Life Cycle
@@ -77,6 +78,7 @@ final class MyPageVC: UIViewController {
         registerCells()
         setupDataSource()
         reloadData()
+        requestData()
     }
     
     // MARK: - Function
@@ -101,7 +103,6 @@ extension MyPageVC: UICollectionViewDelegate{
 extension MyPageVC {
     
     func setupDataSource() {
-        
         dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             let section = Sections(rawValue: indexPath.section)!
             switch section{
@@ -112,7 +113,7 @@ extension MyPageVC {
                 return cell
             case .detailList:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageBorrowedListCVC.reuseID, for: indexPath) as! MyPageBorrowedListCVC
-                cell.updateData(borrowInfo: item as? LendingBook)
+                cell.updateInfo(lendingInfo: item as? UserLendingInfo)
                 return cell
             }
         })
@@ -128,9 +129,9 @@ extension MyPageVC {
         snapshot.appendItems([], toSection: .detailList)
     }
     
-    private func updateData(borrow: [LendingBook]) {
+    private func updateData(lendingInfo: [UserLendingInfo]) {
         var snapshot = dataSource.snapshot()
-        snapshot.appendItems(borrow, toSection: .detailList)
+        snapshot.appendItems(lendingInfo, toSection: .detailList)
         dataSource.apply(snapshot)
     }
 }
@@ -163,15 +164,18 @@ extension MyPageVC {
         //        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: spacing, bottom: 0, trailing: spacing)
         //        group.interItemSpacing = .flexible(-16)
         let section = NSCollectionLayoutSection(group: group)
+     
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 23, bottom: 0, trailing: 25)
         return section
     }
     
     func detailListSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(UIScreen.main.bounds.size.width - 45), heightDimension: .estimated(140))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(335), heightDimension: .estimated(140))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(8), top: .fixed(24), trailing: .flexible(8), bottom: .fixed(24))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item] )
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 34, leading: 0, bottom: 23, trailing: 0)
@@ -239,24 +243,26 @@ extension MyPageVC {
 }
 // MARK: - Network
 // TODO: Service 파일 추가 필요
-
-//extension MyPageVC {
-//    func borrowBook(){
-//        MainAPI().bookProvider.request(.mainBookList) { response in
-//            switch response {
-//            case .success(let result):
-//                do{
-//                    let filteredResponse = try result.filterSuccessfulStatusCodes()
-//                    self.bookData = try filteredResponse.map(MainBooklist.self)
-//                    if let result = self.bookData?.data{
-//                        self.updateData(borrow: result.lendingBook )
-//                    }
-//                }catch(let error){
-//                    print("catch error :\(error.localizedDescription)")
-//                }
-//            case .failure(let error):
-//                print("failure :\(error.localizedDescription)")
-//            }
-//        }
-//    }
-//}
+extension MyPageVC {
+    func requestData(){
+        MyPageAPI().dataProvider.request(.myDetailList) { response in
+            switch response {
+            case .success(let result):
+                do{
+                    let filteredResponse = try result.filterSuccessfulStatusCodes()
+                    print("1번")
+                    self.userData = try filteredResponse.map(MyPageList.self)
+                    print("2번")
+                    if let result = self.userData?.data{
+                        self.updateData(lendingInfo: result.books )
+                        print("3번")
+                    }
+                }catch(let error){
+                    print("catch error :\(error.localizedDescription)")
+                }
+            case .failure(let error):
+                print("failure :\(error.localizedDescription)")
+            }
+        }
+    }
+}
