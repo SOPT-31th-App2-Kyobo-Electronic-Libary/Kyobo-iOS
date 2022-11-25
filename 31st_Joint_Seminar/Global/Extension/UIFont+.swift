@@ -44,4 +44,8 @@ extension UIFont {
     class var kyoboIosBody5: UIFont {
         return UIFont(name: "AppleSDGothicNeo-Medium", size: 10.0)!
     }
+    
+    class var kyoboIosBody6: UIFont {
+        return UIFont(name: "AppleSDGothicNeo-Regular", size: 12.0)!
+    }
 }

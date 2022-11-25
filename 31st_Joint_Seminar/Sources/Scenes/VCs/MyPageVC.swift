@@ -184,7 +184,7 @@ extension MyPageVC {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 34, leading: 0, bottom: 23, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 23, trailing: 0)
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind:UICollectionView.elementKindSectionHeader,alignment: .top)
@@ -254,7 +254,6 @@ extension MyPageVC {
     }
 }
 // MARK: - Network
-// TODO: Service 파일 추가 필요
 extension MyPageVC {
     func requestData(){
         MyPageAPI().dataProvider.request(.myDetailList) { response in

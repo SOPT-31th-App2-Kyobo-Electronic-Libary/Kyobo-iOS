@@ -11,6 +11,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>AppleSDGothicNeo-SemiBold</string>
 		<string>AppleSDGothicNeo-Bold</string>
 		<string>AppleSDGothicNeo-Regular</string>
 		<string>AppleSDGothicNeo-Medium</string>
