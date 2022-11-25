@@ -329,7 +329,7 @@ extension BookDetailVC {
 }
 
 extension BookDetailVC {
-    func updateInfo(lendingInfo: UserLendingInfo!) {
+    func updateData(lendingInfo: UserLendingInfo!) {
 //            self.bookImg.kf.setImage(with: URL(string: lendingInfo.image), placeholder: UIImage(systemName: "hands.sparkles.fill" ))
             self.bookNameLabel.text = lendingInfo.name
             self.publisherLabel.text = lendingInfo.author
@@ -348,8 +348,9 @@ extension BookDetailVC {
                     print("1번")
                     self.bookDetailData = try filteredResponse.map(BookDetailList.self)
                     print("2번")
-                    if let result = self.userData?.data{
-                        self.updateData(lendingInfo: result.books )
+                    if let result = self.bookDetailData?.data{
+                        self.updateData(lendingInfo: UserLendingInfo?)
+                        // 언니나 오빠 뷰랑 다르게 컬렉션뷰를 거치치 않고 바로 데이터를 불러오면 되는데, 어떻게 코드를 짜야할지 모르겠어요ㅠㅠ
                         print("3번")
                     }
                 }catch(let error){

@@ -19,7 +19,7 @@ extension BookDetailService : TargetType {
     var path: String {
         switch self {
         case .bookDetailList:
-            return "book/1"
+            return "/book/1"
         }
     }
     
