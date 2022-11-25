@@ -351,10 +351,6 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 21 images.
   struct image {
-    /// Image `Frame 59480`.
-    static let frame59480 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Frame 59480")
-    /// Image `Frame 59509`.
-    static let frame59509 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Frame 59509")
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
     /// Image `category_icon`.
@@ -369,6 +365,8 @@ struct R: Rswift.Validatable {
     static let kyobo_icon_logout = Rswift.ImageResource(bundle: R.hostingBundle, name: "kyobo_icon_logout")
     /// Image `kyobo_icon_settings`.
     static let kyobo_icon_settings = Rswift.ImageResource(bundle: R.hostingBundle, name: "kyobo_icon_settings")
+    /// Image `lendingDate_img`.
+    static let lendingDate_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "lendingDate_img")
     /// Image `library_search_icon`.
     static let library_search_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "library_search_icon")
     /// Image `magnify_icon`.
@@ -393,6 +391,8 @@ struct R: Rswift.Validatable {
     static let sampleBook_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "sampleBook_img")
     /// Image `star_icon`.
     static let star_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "star_icon")
+    /// Image `yearFilter_img`.
+    static let yearFilter_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "yearFilter_img")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Frame 59480", bundle: ..., traitCollection: ...)`
@@ -465,6 +465,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "kyobo_icon_settings", bundle: ..., traitCollection: ...)`
     static func kyobo_icon_settings(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.kyobo_icon_settings, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lendingDate_img", bundle: ..., traitCollection: ...)`
+    static func lendingDate_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lendingDate_img, compatibleWith: traitCollection)
     }
     #endif
 
@@ -552,6 +559,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "star_icon", bundle: ..., traitCollection: ...)`
     static func star_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.star_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "yearFilter_img", bundle: ..., traitCollection: ...)`
+    static func yearFilter_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.yearFilter_img, compatibleWith: traitCollection)
     }
     #endif
 

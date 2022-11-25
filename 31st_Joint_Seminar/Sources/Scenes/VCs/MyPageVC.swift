@@ -67,7 +67,6 @@ final class MyPageVC: UIViewController {
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.showsVerticalScrollIndicator = false
         $0.delegate = self
-//        $0.isScrollEnabled = false
     }
     
     // MARK: - View Life Cycle
@@ -85,6 +84,7 @@ final class MyPageVC: UIViewController {
     func registerCells() {
         collectionView.register(MyPageMenuCVC.self, forCellWithReuseIdentifier: MyPageMenuCVC.reuseID)
         collectionView.register(MyPageBorrowedListCVC.self, forCellWithReuseIdentifier: MyPageBorrowedListCVC.reuseID)
+        collectionView.register(FilterHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: FilterHeader.reuseID)
     }
 }
 
@@ -127,6 +127,12 @@ extension MyPageVC {
         snapshot.appendSections([.menuTitleList, .detailList])
         snapshot.appendItems(menuTitleList, toSection: .menuTitleList)
         snapshot.appendItems([], toSection: .detailList)
+        dataSource.supplementaryViewProvider = {
+            (collectionView, kind, indexPath) in
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: FilterHeader.reuseID, for: indexPath) as? FilterHeader else {
+                return UICollectionReusableView()}
+            return header
+        }
     }
     
     private func updateData(lendingInfo: [UserLendingInfo]) {
@@ -179,6 +185,12 @@ extension MyPageVC {
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 34, leading: 0, bottom: 23, trailing: 0)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind:UICollectionView.elementKindSectionHeader,alignment: .top)
+        header.pinToVisibleBounds = true
+        section.boundarySupplementaryItems = [header]
+        
         return section
     }
 }
