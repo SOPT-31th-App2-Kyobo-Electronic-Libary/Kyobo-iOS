@@ -349,12 +349,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 13 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
-    /// Image `back`.
-    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
-    /// Image `bookImage`.
-    static let bookImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "bookImage")
     /// Image `category_icon`.
     static let category_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "category_icon")
     /// Image `category_selected_icon`.
@@ -373,24 +369,6 @@ struct R: Rswift.Validatable {
     static let notificationBox_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBox_icon")
     /// Image `notificationBox_selected_icon`.
     static let notificationBox_selected_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBox_selected_icon")
-    /// Image `pdfImage`.
-    static let pdfImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "pdfImage")
-    /// Image `star`.
-    static let star = Rswift.ImageResource(bundle: R.hostingBundle, name: "star")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
-    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "bookImage", bundle: ..., traitCollection: ...)`
-    static func bookImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bookImage, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "category_icon", bundle: ..., traitCollection: ...)`
@@ -452,20 +430,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "notificationBox_selected_icon", bundle: ..., traitCollection: ...)`
     static func notificationBox_selected_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.notificationBox_selected_icon, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "pdfImage", bundle: ..., traitCollection: ...)`
-    static func pdfImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pdfImage, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "star", bundle: ..., traitCollection: ...)`
-    static func star(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.star, compatibleWith: traitCollection)
     }
     #endif
 
