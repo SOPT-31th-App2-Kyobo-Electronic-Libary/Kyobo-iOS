@@ -16,6 +16,10 @@ final class BookDetailVC: UIViewController {
         $0.showsVerticalScrollIndicator = false
     }
     
+    private lazy var subView = DetailSubView(frame: self.view.bounds).then {
+        $0.backgroundColor = Color.kybo_white
+    }
+    
     private let bookImageContainerView = UIView().then {
         $0.backgroundColor = Color.kybo_green
     }
@@ -144,6 +148,7 @@ final class BookDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         layout()
     }
 }
@@ -160,7 +165,7 @@ extension BookDetailVC {
             view.addSubview($0)
         }
         
-        [bookImageContainerView, bookDataContainerView].forEach {
+        [subView, bookImageContainerView, bookDataContainerView].forEach {
             containerView.addSubview($0)
         }
         
@@ -178,8 +183,14 @@ extension BookDetailVC {
             $0.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        bookImageContainerView.snp.makeConstraints {
+        subView.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.height.equalTo(50)
+        }
+        
+        bookImageContainerView.snp.makeConstraints {
+            $0.top.equalTo(subView.snp.bottom)
             $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
             $0.height.equalTo(292)
         }
