@@ -349,7 +349,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 16 images.
+  /// This `R.image` struct is generated, and contains static references to 21 images.
   struct image {
     /// Image `Frame 59480`.
     static let frame59480 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Frame 59480")
@@ -373,6 +373,8 @@ struct R: Rswift.Validatable {
     static let library_search_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "library_search_icon")
     /// Image `magnify_icon`.
     static let magnify_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "magnify_icon")
+    /// Image `magnify`.
+    static let magnify = Rswift.ImageResource(bundle: R.hostingBundle, name: "magnify")
     /// Image `myPage_icon`.
     static let myPage_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "myPage_icon")
     /// Image `myPage_selected_icon`.
@@ -381,6 +383,12 @@ struct R: Rswift.Validatable {
     static let notificationBox_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBox_icon")
     /// Image `notificationBox_selected_icon`.
     static let notificationBox_selected_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBox_selected_icon")
+    /// Image `recent_search_1`.
+    static let recent_search_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "recent_search_1")
+    /// Image `recent_search_2`.
+    static let recent_search_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "recent_search_2")
+    /// Image `recent_search_3`.
+    static let recent_search_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "recent_search_3")
     /// Image `sampleBook_img`.
     static let sampleBook_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "sampleBook_img")
     /// Image `star_icon`.
@@ -403,6 +411,13 @@ struct R: Rswift.Validatable {
     static let recent_search_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "recent_search_2")
     /// Image `recent_search_3`.
     static let recent_search_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "recent_search_3")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
@@ -461,6 +476,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "magnify", bundle: ..., traitCollection: ...)`
+    static func magnify(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.magnify, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "magnify_icon", bundle: ..., traitCollection: ...)`
     static func magnify_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.magnify_icon, compatibleWith: traitCollection)
@@ -492,6 +514,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "notificationBox_selected_icon", bundle: ..., traitCollection: ...)`
     static func notificationBox_selected_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.notificationBox_selected_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "recent_search_1", bundle: ..., traitCollection: ...)`
+    static func recent_search_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recent_search_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "recent_search_2", bundle: ..., traitCollection: ...)`
+    static func recent_search_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recent_search_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "recent_search_3", bundle: ..., traitCollection: ...)`
+    static func recent_search_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recent_search_3, compatibleWith: traitCollection)
     }
     #endif
 

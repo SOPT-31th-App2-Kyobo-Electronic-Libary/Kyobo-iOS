@@ -28,6 +28,7 @@
 		09C3D1E5292CF4EB00E21546 /* MainListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3D1E4292CF4EB00E21546 /* MainListResponse.swift */; };
 		09C3D1E8292CFB4B00E21546 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3D1E7292CFB4B00E21546 /* API.swift */; };
 		09C3D1EC292D24EB00E21546 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09C3D1EB292D24EB00E21546 /* Kingfisher */; };
+		6C9EA1E2292F6A9A006486BD /* SearchSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EA1E1292F6A9A006486BD /* SearchSubView.swift */; };
 		E7289148292F7930009F0F0C /* MyPageMenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7289147292F7930009F0F0C /* MyPageMenuCVC.swift */; };
 		E728914B292F7A27009F0F0C /* MyPageMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728914A292F7A27009F0F0C /* MyPageMenuList.swift */; };
 		6C8CEDAE2930C1AE007524B6 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8CEDAD2930C1AE007524B6 /* RecentCell.swift */; };
@@ -88,6 +89,7 @@
 		09C3D1E1292CF2C100E21546 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		09C3D1E4292CF4EB00E21546 /* MainListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListResponse.swift; sourceTree = "<group>"; };
 		09C3D1E7292CFB4B00E21546 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E7289147292F7930009F0F0C /* MyPageMenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMenuCVC.swift; sourceTree = "<group>"; };
 		6C8CEDAD2930C1AE007524B6 /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
 		6C8CEDB02930CC34007524B6 /* RecentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentModel.swift; sourceTree = "<group>"; };
 		6C8CEDB22930FE00007524B6 /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
