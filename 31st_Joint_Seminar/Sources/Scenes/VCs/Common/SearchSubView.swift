@@ -5,19 +5,19 @@ import SnapKit
 class SearchSubView : UIView {
 
     private lazy var backBtn = UIButton().then {
-        $0.setImage(UIImage(named:"LibrarySearch/back"), for: .normal)
+        $0.setImage(UIImage(named:"back"), for: .normal)
         // $0.addTarget(self, action:#selector(touchupCloseButton), for:.touchUpInside)
     }
     private lazy var searchTextField = UITextField().then { // UISearchController
         $0.backgroundColor = Color.kybo_light_gray
-        $0.font = .kyoboIosH4
+        $0.font = .systemFont(ofSize: 14, weight: .medium)
         $0.layer.cornerRadius = 8
         $0.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 14.0, height: 0.0))
         $0.leftViewMode = .always
         $0.placeholder = "검색어를 입력해주세요" // color 설정 필요
     }
     private lazy var magnifyBtn = UIButton().then {
-        $0.setImage(UIImage(named: "LibrarySearch/magnify"), for: .normal)
+        $0.setImage(UIImage(named: "magnify"), for: .normal)
     }
     override init(frame: CGRect) {
         super.init(frame: .zero)
