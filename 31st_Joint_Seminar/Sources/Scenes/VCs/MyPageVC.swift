@@ -181,7 +181,7 @@ extension MyPageVC {
         item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(8), top: .fixed(24), trailing: .flexible(8), bottom: .fixed(24))
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 5)
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 23, trailing: 0)
