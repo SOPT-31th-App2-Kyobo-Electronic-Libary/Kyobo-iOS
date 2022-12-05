@@ -12,3 +12,6 @@ public class MainAPI {
     let bookProvider = MoyaProvider<MainRouter>(plugins:[NetworkLoggerPlugin(verbose: true)])
 }
 
+public class BookDetailAPI {
+    let dataProvider = MoyaProvider<BookDetailService>(plugins:[NetworkLoggerPlugin(verbose: true)])
+}

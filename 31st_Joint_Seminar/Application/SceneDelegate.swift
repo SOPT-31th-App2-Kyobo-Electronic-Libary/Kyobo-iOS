@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
     
-            let rootVC = AppTabBarController()
+            let rootVC = BookDetailVC() //AppTabBarController()
             let navigationController = UINavigationController(rootViewController: rootVC)
             window.rootViewController = navigationController
             window.makeKeyAndVisible()

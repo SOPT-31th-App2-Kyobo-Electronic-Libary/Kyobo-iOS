@@ -8,6 +8,8 @@
 import UIKit
 import Then
 import SnapKit
+import Moya
+import Kingfisher
 
 final class BookDetailVC: UIViewController {
 
@@ -144,12 +146,16 @@ final class BookDetailVC: UIViewController {
         $0.layer.cornerRadius = 8
     }
     
+    var LendingData: UserLendingInfo?
+    var bookDetailData : BookDetailList?
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         layout()
+        requestData()
     }
 }
 
@@ -318,6 +324,41 @@ extension BookDetailVC {
             $0.leading.equalTo(self.borrowContainerView.snp.leading).offset(204)
             $0.trailing.equalTo(self.borrowContainerView.snp.trailing).offset(-26)
             $0.height.equalTo(54)
+        }
+    }
+}
+
+extension BookDetailVC {
+    func updateData(lendingInfo: UserLendingInfo!) {
+        self.bookImageView.kf.setImage(with: URL(string: lendingInfo.image), placeholder: UIImage(systemName: "hands.sparkles.fill" ))
+            self.bookNameLabel.text = lendingInfo.name
+            self.publisherLabel.text = lendingInfo.author
+            self.publishingLabel.text = lendingInfo.publisher
+            self.aboutBookTextLabel.text = lendingInfo.description
+            self.publishDateLabel.text = lendingInfo.pubDate
+            self.returnDateLabel.text = lendingInfo.returnDate
+        }
+    
+    func requestData(){
+        BookDetailAPI().dataProvider.request(.bookDetailList) { response in
+            switch response {
+            case .success(let result):
+                do{
+                    let filteredResponse = try result.filterSuccessfulStatusCodes()
+                    print("1번")
+                    print(filteredResponse)
+                    self.bookDetailData = try filteredResponse.map(BookDetailList.self)
+                    print("2번")
+                    if let result = self.bookDetailData?.data{
+                        self.updateData(lendingInfo: result.book)
+                        print("3번")
+                    }
+                }catch(let error){
+                    print("catch error :\(error.localizedDescription)")
+                }
+            case .failure(let error):
+                print("failure :\(error.localizedDescription)")
+            }
         }
     }
 }
