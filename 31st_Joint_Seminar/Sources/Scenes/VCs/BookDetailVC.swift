@@ -146,7 +146,7 @@ final class BookDetailVC: UIViewController {
         $0.layer.cornerRadius = 8
     }
     
-    var LendingData: UserLendingInfo?
+    var LendingData: UserLendingDetail?
     var bookDetailData : BookDetailList?
     
     // MARK: - Life Cycles
@@ -329,7 +329,7 @@ extension BookDetailVC {
 }
 
 extension BookDetailVC {
-    func updateData(lendingInfo: UserLendingInfo!) {
+    func updateData(lendingInfo: UserLendingDetail!) {
         self.bookImageView.kf.setImage(with: URL(string: lendingInfo.image), placeholder: UIImage(systemName: "hands.sparkles.fill" ))
             self.bookNameLabel.text = lendingInfo.name
             self.publisherLabel.text = lendingInfo.author
@@ -345,13 +345,10 @@ extension BookDetailVC {
             case .success(let result):
                 do{
                     let filteredResponse = try result.filterSuccessfulStatusCodes()
-                    print("1번")
                     print(filteredResponse)
                     self.bookDetailData = try filteredResponse.map(BookDetailList.self)
-                    print("2번")
                     if let result = self.bookDetailData?.data{
                         self.updateData(lendingInfo: result.book)
-                        print("3번")
                     }
                 }catch(let error){
                     print("catch error :\(error.localizedDescription)")

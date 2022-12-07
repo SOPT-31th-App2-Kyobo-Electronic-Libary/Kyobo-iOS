@@ -9,22 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-class AppTabBar: UITabBar {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        clipsToBounds = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 final class AppTabBarController: UITabBarController {
-    
-    // MARK: - Properties
-    private let appTabBar = AppTabBar()
-    
+
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -40,6 +26,7 @@ final class AppTabBarController: UITabBarController {
                                      image: UIImage(named: tabBarImg)?.withRenderingMode(.alwaysOriginal),
                                      selectedImage: UIImage(named: tabBarSelectedImg)?.withRenderingMode(.alwaysOriginal))
         vc.tabBarItem.imageInsets = UIEdgeInsets(top: 2, left: 0, bottom: -2, right: 0)
+        vc.tabBarItem.setBadgeTextAttributes([NSAttributedString.Key.font: UIFont.kyoboIosBody6], for: .normal)
         return vc
     }
     
@@ -52,9 +39,9 @@ final class AppTabBarController: UITabBarController {
         let categoryTab = makeTabVC(vc: BaseNC(rootViewController: CategroyVC()), tabBarTitle: "카테고리", tabBarImg: "category_icon", tabBarSelectedImg: "category_selected_icon")
         categoryTab.tabBarItem.tag = 1
         
-        let libraryTab = makeTabVC(vc: BaseNC(rootViewController: LibrarySearchVC()), tabBarTitle: "", tabBarImg: "library_search_icon", tabBarSelectedImg: "library_search_icon")
+        let libraryTab = makeTabVC(vc: BaseNC(rootViewController: LibrarySearchVC()), tabBarTitle: "도서관 검색", tabBarImg: "library_search_icon", tabBarSelectedImg: "library_search_icon")
         libraryTab.tabBarItem.tag = 2
-        libraryTab.tabBarItem.imageInsets = UIEdgeInsets(top: -7, left: 0, bottom: 9, right: 0)
+        libraryTab.tabBarItem.imageInsets = UIEdgeInsets(top: -10, left: 0, bottom: 12, right: 0)
         
         let notificationTab = makeTabVC(vc: BaseNC(rootViewController: NotificationVC()), tabBarTitle: "알림함", tabBarImg: "notificationBox_icon", tabBarSelectedImg: "notificationBox_selected_icon")
         notificationTab.tabBarItem.tag = 3
@@ -67,10 +54,45 @@ final class AppTabBarController: UITabBarController {
     }
     
     private func setTabBarItemStyle() {
-        tabBar.tintColor = .kyobo_green
+        UITabBar.clearShadow()
+        tabBar.layer.applyShadow(color: .gray, alpha: 0.3, x: 0, y: 0, blur: 12)
+        
+        let tabBarAppearance = UITabBarAppearance()
+        let tabBarItemAppearance = UITabBarItemAppearance()
+
+        tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Color.kybo_black as Any]
+        tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Color.kybo_green as Any ]
+
+        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+        tabBar.standardAppearance = tabBarAppearance
     }
     
 }
 extension AppTabBarController: UITabBarControllerDelegate {
     
+}
+
+extension CALayer {
+    // Sketch 스타일의 그림자를 생성하는 유틸리티 함수
+    func applyShadow(
+        color: UIColor = .black,
+        alpha: Float = 0.5,
+        x: CGFloat = 0,
+        y: CGFloat = 2,
+        blur: CGFloat = 4
+    ) {
+        shadowColor = color.cgColor
+        shadowOpacity = alpha
+        shadowOffset = CGSize(width: x, height: y)
+        shadowRadius = blur / 2.0
+    }
+}
+
+extension UITabBar {
+    // 기본 그림자 스타일을 초기화해야 커스텀 스타일을 적용할 수 있음
+    static func clearShadow() {
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
 }
