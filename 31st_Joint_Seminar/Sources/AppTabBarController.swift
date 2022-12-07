@@ -54,7 +54,6 @@ final class AppTabBarController: UITabBarController {
     }
     
     private func setTabBarItemStyle() {
-        tabBar.backgroundColor = .white
         UITabBar.clearShadow()
         tabBar.layer.applyShadow(color: .gray, alpha: 0.3, x: 0, y: 0, blur: 12)
         
