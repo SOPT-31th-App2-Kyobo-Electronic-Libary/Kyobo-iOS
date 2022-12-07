@@ -37,6 +37,13 @@
 		6C9EA1E2292F6A9A006486BD /* SearchSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EA1E1292F6A9A006486BD /* SearchSubView.swift */; };
 		E75EC2432926324500F23A2F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EC2422926324500F23A2F /* R.generated.swift */; };
 		E75EC247292635EE00F23A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EC246292635EE00F23A2F /* ViewController.swift */; };
+		E762F2FC293E43EF00BBB5DF /* MyPageMenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F2FB293E43EF00BBB5DF /* MyPageMenuCVC.swift */; };
+		E762F2FE293E43FD00BBB5DF /* MyPageBorrowedListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F2FD293E43FD00BBB5DF /* MyPageBorrowedListCVC.swift */; };
+		E762F300293E441300BBB5DF /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F2FF293E441300BBB5DF /* FilterHeaderView.swift */; };
+		E762F302293E450E00BBB5DF /* MyPageMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F301293E450E00BBB5DF /* MyPageMenuList.swift */; };
+		E762F304293E45E600BBB5DF /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F303293E45E600BBB5DF /* MyPageAPI.swift */; };
+		E762F306293E45F800BBB5DF /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F305293E45F800BBB5DF /* MyPageResponse.swift */; };
+		E762F308293E462000BBB5DF /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762F307293E462000BBB5DF /* MyPageService.swift */; };
 		E7753221292627F40078F0FF /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E7753220292627F40078F0FF /* Rswift */; };
 		E7C2A6E62921D338008579F8 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6E52921D338008579F8 /* UIFont+.swift */; };
 		E7C2A6E82921D392008579F8 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2A6E72921D392008579F8 /* UIColor+.swift */; };
@@ -93,6 +100,13 @@
 		6C9EA1E1292F6A9A006486BD /* SearchSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubView.swift; sourceTree = "<group>"; };
 		E75EC2422926324500F23A2F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E75EC246292635EE00F23A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E762F2FB293E43EF00BBB5DF /* MyPageMenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMenuCVC.swift; sourceTree = "<group>"; };
+		E762F2FD293E43FD00BBB5DF /* MyPageBorrowedListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBorrowedListCVC.swift; sourceTree = "<group>"; };
+		E762F2FF293E441300BBB5DF /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
+		E762F301293E450E00BBB5DF /* MyPageMenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMenuList.swift; sourceTree = "<group>"; };
+		E762F303293E45E600BBB5DF /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
+		E762F305293E45F800BBB5DF /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+		E762F307293E462000BBB5DF /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		E7C2A6E52921D338008579F8 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		E7C2A6E72921D392008579F8 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		E7C2A6E929220811008579F8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -138,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				09341A212927EBAB006B9A0B /* BookList.swift */,
+				E762F301293E450E00BBB5DF /* MyPageMenuList.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -181,6 +196,7 @@
 			children = (
 				09C3D1E4292CF4EB00E21546 /* MainListResponse.swift */,
 				6C8CEDB629310D7A007524B6 /* BookDetailResponse.swift */,
+				E762F305293E45F800BBB5DF /* MyPageResponse.swift */,
 			);
 			path = Resnponse;
 			sourceTree = "<group>";
@@ -189,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				09C3D1E7292CFB4B00E21546 /* API.swift */,
+				E762F303293E45E600BBB5DF /* MyPageAPI.swift */,
 			);
 			path = APIProvider;
 			sourceTree = "<group>";
@@ -200,6 +217,16 @@
 				6C8CEDB02930CC34007524B6 /* RecentModel.swift */,
 			);
 			path = LibrarySearchCell;
+			sourceTree = "<group>";
+		};
+		E762F2FA293E43AE00BBB5DF /* MyPageCells */ = {
+			isa = PBXGroup;
+			children = (
+				E762F2FB293E43EF00BBB5DF /* MyPageMenuCVC.swift */,
+				E762F2FD293E43FD00BBB5DF /* MyPageBorrowedListCVC.swift */,
+				E762F2FF293E441300BBB5DF /* FilterHeaderView.swift */,
+			);
+			path = MyPageCells;
 			sourceTree = "<group>";
 		};
 		E773E80B292B956C00C98A62 /* Fonts */ = {
@@ -223,6 +250,7 @@
 				E7C2A6ED2922083C008579F8 /* NotificationVC.swift */,
 				E7C2A6EF2922084D008579F8 /* LibrarySearchVC.swift */,
 				E7C2A6F129220863008579F8 /* MyPageVC.swift */,
+				E762F2FA293E43AE00BBB5DF /* MyPageCells */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -342,6 +370,7 @@
 			children = (
 				E7CE25822920DC48006DA24C /* TempServices.swift */,
 				6C8CEDBA29310EBF007524B6 /* BookDetailServices.swift */,
+				E762F307293E462000BBB5DF /* MyPageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -486,26 +515,33 @@
 				E7C2A6EC29220820008579F8 /* CategroyVC.swift in Sources */,
 				6C8CEDB52930FF92007524B6 /* DetailSubView.swift in Sources */,
 				09341A342927ED56006B9A0B /* CustomBtn.swift in Sources */,
+				E762F2FC293E43EF00BBB5DF /* MyPageMenuCVC.swift in Sources */,
+				E762F302293E450E00BBB5DF /* MyPageMenuList.swift in Sources */,
 				09341A312927ECFE006B9A0B /* FieldCell.swift in Sources */,
 				09C3D1E5292CF4EB00E21546 /* MainListResponse.swift in Sources */,
 				E75EC2432926324500F23A2F /* R.generated.swift in Sources */,
 				09C3D1E2292CF2C100E21546 /* Header.swift in Sources */,
 				E7C2A6EA29220811008579F8 /* HomeVC.swift in Sources */,
 				09341A3C2927ED71006B9A0B /* SubView.swift in Sources */,
+				E762F304293E45E600BBB5DF /* MyPageAPI.swift in Sources */,
 				E7C2A6E62921D338008579F8 /* UIFont+.swift in Sources */,
+				E762F300293E441300BBB5DF /* FilterHeaderView.swift in Sources */,
 				6C8CEDAE2930C1AE007524B6 /* RecentCell.swift in Sources */,
 				09341A2B2927ECE3006B9A0B /* NewCell.swift in Sources */,
 				E7CE255D291EA7B8006DA24C /* AppDelegate.swift in Sources */,
 				09C3D1DE292CF27E00E21546 /* NetworkLoggerPlugin.swift in Sources */,
 				E7C2A704292237D9008579F8 /* BaseNC.swift in Sources */,
+				E762F2FE293E43FD00BBB5DF /* MyPageBorrowedListCVC.swift in Sources */,
 				6C8CEDB32930FE00007524B6 /* BookDetailVC.swift in Sources */,
 				09341A2F2927ECF5006B9A0B /* NewTitleListCell.swift in Sources */,
 				E7CE255F291EA7B8006DA24C /* SceneDelegate.swift in Sources */,
 				E7C2A6E82921D392008579F8 /* UIColor+.swift in Sources */,
 				E7C2A6EE2922083C008579F8 /* NotificationVC.swift in Sources */,
+				E762F308293E462000BBB5DF /* MyPageService.swift in Sources */,
 				6C8CEDBB29310EBF007524B6 /* BookDetailServices.swift in Sources */,
 				09341A242927EBD1006B9A0B /* Color.swift in Sources */,
 				09341A262927EBE0006B9A0B /* Font.swift in Sources */,
+				E762F306293E45F800BBB5DF /* MyPageResponse.swift in Sources */,
 				6C8CEDB729310D7A007524B6 /* BookDetailResponse.swift in Sources */,
 				09341A2D2927ECEC006B9A0B /* BestCell.swift in Sources */,
 				09341A3A2927ED6E006B9A0B /* HeaderView.swift in Sources */,
