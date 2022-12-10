@@ -70,6 +70,12 @@ final class MyPageVC: UIViewController {
     }
     
     // MARK: - View Life Cycle
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let bottomOffset: CGFloat = (tabBarController?.tabBar.frame.height) ?? 0
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomOffset+100, right: 0)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -169,7 +175,7 @@ extension MyPageVC {
         //        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: spacing, bottom: 0, trailing: spacing)
         //        group.interItemSpacing = .flexible(-16)
         let section = NSCollectionLayoutSection(group: group)
-     
+        
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 23, bottom: 0, trailing: 25)
         return section
     }
