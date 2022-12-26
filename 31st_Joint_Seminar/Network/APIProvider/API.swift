@@ -15,3 +15,7 @@ public class MainAPI {
 public class BookDetailAPI {
     let dataProvider = MoyaProvider<BookDetailService>(plugins:[NetworkLoggerPlugin(verbose: true)])
 }
+
+public class LendingBookAPI {
+    let dataProvider = MoyaProvider<BookDetailService>(plugins:[NetworkLoggerPlugin(verbose: true)])
+}

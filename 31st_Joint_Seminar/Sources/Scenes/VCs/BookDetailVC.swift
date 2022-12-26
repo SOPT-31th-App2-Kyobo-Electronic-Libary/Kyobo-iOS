@@ -18,10 +18,16 @@ final class BookDetailVC: UIViewController {
         $0.showsVerticalScrollIndicator = false
     }
     
-    private lazy var subView = DetailSubView(frame: self.view.bounds).then {
-        $0.backgroundColor = Color.kybo_white
+//    private lazy var subView = DetailSubView(frame: self.view.bounds).then {
+//        $0.backgroundColor = Color.kybo_white
+//    }
+    lazy var backBtn = UIButton().then{
+        $0.setImage(UIImage(named: "BookDetail/back"), for: .normal)
+        $0.addTarget(self, action: #selector(popVCBtn), for: .touchUpInside)
     }
-    
+    @objc func popVCBtn() {
+        self.navigationController?.popViewController(animated: true)
+    }
     private let bookImageContainerView = UIView().then {
         $0.backgroundColor = Color.kybo_green
     }
@@ -144,16 +150,20 @@ final class BookDetailVC: UIViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         $0.backgroundColor = Color.kybo_green
         $0.layer.cornerRadius = 8
+        $0.addTarget(self, action:#selector(lendBook), for:.touchUpInside)
+    }
+    @objc func lendBook() {
+        requestLendingBookData()
     }
     
     var LendingData: UserLendingDetail?
     var bookDetailData : BookDetailList?
+    var bookLending: BookLending?
     
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         layout()
         requestData()
     }
@@ -171,7 +181,7 @@ extension BookDetailVC {
             view.addSubview($0)
         }
         
-        [subView, bookImageContainerView, bookDataContainerView].forEach {
+        [backBtn, bookImageContainerView, bookDataContainerView].forEach {
             containerView.addSubview($0)
         }
         
@@ -189,14 +199,14 @@ extension BookDetailVC {
             $0.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        subView.snp.makeConstraints {
+        backBtn.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.equalTo(self.view.safeAreaLayoutGuide).offset(10)
             $0.height.equalTo(50)
         }
         
         bookImageContainerView.snp.makeConstraints {
-            $0.top.equalTo(subView.snp.bottom)
+            $0.top.equalTo(backBtn.snp.bottom)
             $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
             $0.height.equalTo(292)
         }
@@ -356,6 +366,41 @@ extension BookDetailVC {
             case .failure(let error):
                 print("failure :\(error.localizedDescription)")
             }
+        }
+    }
+    
+    /// api 중  대출이 되는 경우가 없어 서버 연결 못함
+    func requestLendingBookData(){
+        BookDetailAPI().dataProvider.request(.lendingBook) { response in
+            switch response {
+            case .success:
+                print("성공!!")
+            
+            case .failure(let error):
+                let moyaError: MoyaError? = error as? MoyaError
+                let response : Response? = moyaError?.response
+                print(response?.data)
+//                let statusCode : Int? = response?.statusCode
+            }
+//            switch response {
+//            case .success(let result):
+//                do{
+//                    let filteredResponse = try result.filterSuccessfulStatusCodes()
+//                    print("필터 리스폰스", filteredResponse)
+//                    self.bookLending = try filteredResponse.map(BookLending.self)
+//                    print("성공!")
+//                }catch(let error){
+//                    print("catch error :\(error.localizedDescription)")
+//                }
+//            case .failure(let result):
+////                print("failure :\(error.localizedDescription)")
+//                do{
+//                    let filteredResponse = try result.response
+//                    print("필터 리스폰스", filteredResponse)
+//                    self.bookLending = try filteredResponse.map(BookLending.self)
+//                    print("메시지", bookLending?.message)
+//                }
+//            }
         }
     }
 }

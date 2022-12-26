@@ -11,6 +11,7 @@ class BaseNC: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationBar.isHidden = true
         interactivePopGestureRecognizer?.delegate = self
     }
 }

@@ -10,6 +10,7 @@ import Moya
 
 enum BookDetailService {
     case bookDetailList
+    case lendingBook
 }
 
 extension BookDetailService : TargetType {
@@ -19,14 +20,19 @@ extension BookDetailService : TargetType {
     var path: String {
         switch self {
         case .bookDetailList:
-            return "/book/1"
+            return "/book/3"
+        case .lendingBook:
+            return "/book/1/lending"
         }
+
     }
     
     var method: Moya.Method {
         switch self {
         case .bookDetailList:
             return .get
+        case .lendingBook:
+            return .post
         }
     }
     
@@ -37,6 +43,8 @@ extension BookDetailService : TargetType {
     var task: Task {
         switch self {
         case .bookDetailList:
+            return .requestPlain
+        case .lendingBook:
             return .requestPlain
         }
     }

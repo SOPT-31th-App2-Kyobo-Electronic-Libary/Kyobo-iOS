@@ -84,6 +84,7 @@ final class MyPageVC: UIViewController {
         setupDataSource()
         reloadData()
         requestData()
+        collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
     }
     
     // MARK: - Function
@@ -102,6 +103,16 @@ extension MyPageVC: UICollectionViewDelegate{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageMenuCVC.reuseID, for: indexPath) as! MyPageMenuCVC
         cell.isSelected = true
         
+//        guard let selectedItem = dataSource.itemIdentifier(for: indexPath) else { return }
+//        cell.isSelected = true
+        
+        if indexPath.section == 1 {
+            sendToBookDetail()
+        }
+    }
+    @objc func sendToBookDetail() {
+        let vc = BookDetailVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - DiffableDataSource
